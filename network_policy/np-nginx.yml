@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: np-nginx
+  namespace: np-test
+  labels:
+    app: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+# kubectl run np-nginx -n np-test -l app=nginx --image=nginx --dry-run=client -o yaml > np-nginx.yml 

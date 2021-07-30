@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    team: np-test
+  creationTimestamp: null
+  name: np-test
+spec: {}
+status: {}
+
+# kubectl create namespace np-test 

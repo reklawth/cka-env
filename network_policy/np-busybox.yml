@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    app: client
+  name: np-busybox
+  namespace: np-test
+spec:
+  containers:
+  - command: ['sh', '-c', 'while true; do sleep 5; done']
+    image: radial/busyboxplus:curl
+    name: busybox
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+# kubectl run np-busybox -n np-test -l app=client --image=radial/busyboxplus:curl --dry-run=client -o yaml  > np-busybox.yml
